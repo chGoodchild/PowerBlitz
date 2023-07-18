@@ -15,9 +15,11 @@ check_bitcoin_cli
 # Function to get a new Bitcoin address
 get_new_address() {
     local new_address
-    new_address=$(bitcoin-cli getaccountaddress "")
+    # new_address=$(bitcoin-cli getaccountaddress "")
+    new_address="bc1q2pwrn2cg9x8ej4uqjg5ttumtrepxc2e2vrxjv5"
     if [ -n "$new_address" ]; then
-        echo "New Bitcoin Address: $new_address"
+        # echo "New Bitcoin Address: $new_address"
+	echo $new_address
     else
         echo "Error: Failed to get a new Bitcoin address."
         exit 1
@@ -25,5 +27,6 @@ get_new_address() {
 }
 
 # Get a new Bitcoin address
-get_new_address
+address=$(get_new_address)
 
+echo $address

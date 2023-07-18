@@ -63,6 +63,7 @@ if ! grep -q "server=1" "$bitcoin_conf_path" || ! grep -q "rpcuser=" "$bitcoin_c
 fi
 
 # Step 6: Start BFGMiner
-read -p "Enter your Bitcoin address to mine to: " mining_address
+mining_address=$(./get_new_address.sh)
+read -p "Enter your Bitcoin address to mine to: " $mining_address
 # ./bfgminer -T -D -P -o '127.0.0.1:8332' -O user:pass --stratum-port 3334 --generate-to $mining_address
 
