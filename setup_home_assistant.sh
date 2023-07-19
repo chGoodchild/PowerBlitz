@@ -5,6 +5,11 @@ package_installed() {
     dpkg -l "$1" &> /dev/null
 }
 
+# Function to check if a user exists
+user_exists() {
+    id "$1" &>/dev/null
+}
+
 # Update and upgrade the system
 sudo apt-get update
 sudo apt-get upgrade -y
@@ -21,15 +26,20 @@ for package in "${dependencies[@]}"; do
     fi
 done
 
-# Upgrade pip to the latest version
-sudo python3 -m pip install --upgrade pip
+# Create a user account for Home Assistant Core if it doesn't exist
+if ! user_exists "homeassistant"; then
+    sudo useradd -rm homeassistant -G dialout,gpio,i2c
+else
+    echo "User 'homeassistant' already exists."
+fi
 
-# Create a user account for Home Assistant Core
-sudo useradd -rm homeassistant -G dialout,gpio,i2c
-
-# Create the installation directory and change owner
-sudo mkdir /srv/homeassistant
-sudo chown homeassistant:homeassistant /srv/homeassistant
+# Create the installation directory if it doesn't exist and change owner
+if [ ! -d "/srv/homeassistant" ]; then
+    sudo mkdir /srv/homeassistant
+    sudo chown homeassistant:homeassistant /srv/homeassistant
+else
+    echo "Directory '/srv/homeassistant' already exists."
+fi
 
 # Create and activate a virtual environment for Home Assistant Core
 sudo -u homeassistant -H -s <<EOF
