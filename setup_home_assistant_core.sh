@@ -60,5 +60,8 @@ sudo -u homeassistant -H -s /srv/homeassistant/bin/hass
 # Done!
 echo "Home Assistant Core installation completed!"
 echo "You can now access your installation via the web interface on http://homeassistant.local:8123"
-echo "If that address doesn’t work, you may also try http://localhost:8123 or http://X.X.X.X:8123 (replace X.X.X.X with your Raspberry Pi's IP address)."
+echo "If that address doesn't work, you may also try http://localhost:8123 or http://X.X.X.X:8123 (replace X.X.X.X with your RaspiBlitz's IP address)."
+echo 'If that address doesn’t work, you may also try http://localhost:8123 or http://X.X.X.X:8123 (replace X.X.X.X with your RaspiBlitz'\''s IP address).'
+echo "If that address doesn’t work, you may also try http://localhost:8123 or http://X.X.X.X:8123 (replace X.X.X.X with your RaspiBlitz's IP address)."
 echo "Please be patient during the first run as it may take a few minutes to download and install dependencies."
+
