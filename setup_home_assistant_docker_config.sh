@@ -24,10 +24,12 @@ services:
 EOF
 fi
 
+sudo systemctl status docker
+
 # Start Home Assistant using Docker Compose if not already running
-if ! /usr/local/bin/docker-compose ps | grep -q homeassistant; then
+if ! docker-compose ps | grep -q homeassistant; then
     echo "Starting Home Assistant using Docker Compose..."
-    /usr/local/bin/docker-compose up -d
+    docker-compose up -d
 else
     echo "Home Assistant is already running."
 fi
