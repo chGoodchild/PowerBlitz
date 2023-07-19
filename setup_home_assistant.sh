@@ -21,6 +21,9 @@ for package in "${dependencies[@]}"; do
     fi
 done
 
+# Upgrade pip to the latest version
+sudo python3 -m pip install --upgrade pip
+
 # Create a user account for Home Assistant Core
 sudo useradd -rm homeassistant -G dialout,gpio,i2c
 
@@ -34,11 +37,11 @@ cd /srv/homeassistant
 python3 -m venv .
 source bin/activate
 python3 -m pip install wheel
-pip3 install homeassistant==2023.7.2
+pip3 install homeassistant
 EOF
 
 # Start Home Assistant Core for the first time
-sudo -u homeassistant -H -s hass
+sudo -u homeassistant -H -s /srv/homeassistant/bin/hass
 
 # Optional: Allow Home Assistant to run on port 80
 # Note: This step requires root privileges, and you should be cautious when opening ports.
