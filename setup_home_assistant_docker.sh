@@ -22,5 +22,10 @@ if ! command_exists docker-compose; then
     # Log out and log back in for the group changes to take effect
     echo "Please log out and log back in for Docker group changes to take effect."
     exit 1
+
+    echo "RESTART HERE"
+
+    chmod +x setup_home_assistant_docker_config.sh
+    ./setup_home_assistant_docker_config.sh
 fi
 
