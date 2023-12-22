@@ -25,4 +25,3 @@ The scripts provided in this repository are intended for educational and experim
 
 ## License
 This project is distributed under the terms of the MIT License. For more information, refer to the `LICENSE` file in this repository.
-# BFGBlitz
