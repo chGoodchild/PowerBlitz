@@ -15,8 +15,8 @@ This script utilizes nmap to display the IP address of connected miners, aiding 
 This script focuses on installing and configuring Home Assistant on the RaspiBlitz. It aims to establish seamless integration between the RaspiBlitz, BraiinsOS++ miner, and the charge controller interface.
 
 ## Project Objectives
-* The objective is to demonstrate demand response in a home setting and gather data around performance, cost savings, efficiency and the amount of stranded energy that was monetized.
-* Using StratumV2 job negotiation to point the hashrate at block headers from the RaspiBlitz while still getting frequent payouts from a pool
+* The primary objective is to demonstrate demand response in a home setting and gather data around performance, cost savings, efficiency and the amount of stranded energy that was monetized.
+* A secondary objective is to use StratumV2 job negotiation to point the hashrate at block headers from the RaspiBlitz while still getting frequent payouts from a pool.
 
 
 ## Note
